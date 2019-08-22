@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hotel.hotelapp.R;
@@ -20,14 +21,15 @@ public class HotelMenuAdapter extends RecyclerView.Adapter<HotelMenuAdapter.Menu
     @NonNull
     @Override
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        TextView view = (TextView) LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.menu_item, viewGroup, false);
+        LinearLayout view = (LinearLayout) LayoutInflater.from(viewGroup.getContext()).inflate(
+                R.layout.menu_item, viewGroup, false);
 
         return new MenuViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder menuViewHolder, int i) {
-        menuViewHolder.mView.setText("" + i);
+        ((TextView) menuViewHolder.mView.findViewById(R.id.text_item_id)).setText("" + i);
     }
 
     @Override
@@ -36,9 +38,9 @@ public class HotelMenuAdapter extends RecyclerView.Adapter<HotelMenuAdapter.Menu
     }
 
     class MenuViewHolder extends RecyclerView.ViewHolder {
-        public TextView mView;
+        public LinearLayout mView;
 
-        public MenuViewHolder(@NonNull TextView itemView) {
+        public MenuViewHolder(@NonNull LinearLayout itemView) {
             super(itemView);
             mView = itemView;
         }
