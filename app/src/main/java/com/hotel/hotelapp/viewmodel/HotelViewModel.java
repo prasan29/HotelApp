@@ -9,7 +9,7 @@ public class HotelViewModel extends ViewModel {
     public MutableLiveData<String> mRestaurantDetails = new MutableLiveData<>();
     public MutableLiveData<String> mContactDetails = new MutableLiveData<>();
 
-    HotelViewModel() {
+    public HotelViewModel() {
         mTitle.setValue("");
         mRestaurantName.setValue("Inka Restaurant");
         mRestaurantDetails.setValue("5.0(200+)| All days : 09:00 AM - 06:00 PM");

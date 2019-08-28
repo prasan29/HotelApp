@@ -23,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
+        mBinding.setLifecycleOwner(this);
+
         HotelViewModel hotelViewModel = ViewModelProviders.of(this).get(HotelViewModel.class);
 
         List<String> list = populateListData();
 
-        HotelMenuAdapter adapter = new HotelMenuAdapter(list);
+        HotelMenuAdapter adapter = new HotelMenuAdapter(list, this);
 
         mBinding.setViewModel(hotelViewModel);
 

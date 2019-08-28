@@ -7,7 +7,7 @@ public class MenuItemViewModel extends ViewModel {
     public MutableLiveData<String> mNonVeg = new MutableLiveData<>();
     public MutableLiveData<Boolean> mIsNonVegVisible = new MutableLiveData<>();
     public MutableLiveData<String> mDining = new MutableLiveData<>();
-    public MutableLiveData<String> mIsDiningVisible = new MutableLiveData<>();
+    public MutableLiveData<Boolean> mIsDiningVisible = new MutableLiveData<>();
     public MutableLiveData<String> mMenuTitle = new MutableLiveData<>();
     public MutableLiveData<String> mMenuDescription = new MutableLiveData<>();
     public MutableLiveData<String> mRate = new MutableLiveData<>();
@@ -15,7 +15,7 @@ public class MenuItemViewModel extends ViewModel {
     public MutableLiveData<Boolean> mIsQuantityVisible = new MutableLiveData<>();
     public MutableLiveData<Integer> mQuantity = new MutableLiveData<>();
 
-    MenuItemViewModel() {
+    public MenuItemViewModel() {
         mIsQuantityVisible.setValue(false);
         mAddVisibility.setValue(true);
         mQuantity.setValue(0);

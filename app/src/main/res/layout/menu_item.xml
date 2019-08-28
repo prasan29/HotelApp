@@ -32,7 +32,7 @@
                 android:background="@drawable/text_border"
                 android:padding="4dp"
                 android:text="@{viewModel.mNonVeg}"
-                android:visibility="@{viewModel.mIsNonVegVisible == false ? View.GONE: View.VISIBLE}" />
+                android:visibility="@{viewModel.mIsNonVegVisible == false ? View.GONE : View.VISIBLE}" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
                 android:background="@drawable/text_border"
                 android:padding="4dp"
                 android:text="@{viewModel.mDining}"
-                android:visibility="@{viewModel.mIsDiningVisible == false ? View.GONE: View.VISIBLE}" />
+                android:visibility="@{viewModel.mIsDiningVisible == false ? View.GONE : View.VISIBLE}" />
         </LinearLayout>
 
         <LinearLayout
