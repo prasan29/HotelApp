@@ -4,11 +4,11 @@
 
     <data>
 
-        <import type="android.view.View" />
+        <import type="android.view.View"/>
 
         <variable
             name="viewModel"
-            type="com.hotel.hotelapp.viewmodel.MenuItemViewModel" />
+            type="com.hotel.hotelapp.viewmodel.MenuItemViewModel"/>
     </data>
 
     <LinearLayout
@@ -32,7 +32,7 @@
                 android:background="@drawable/text_border"
                 android:padding="4dp"
                 android:text="@{viewModel.mNonVeg}"
-                android:visibility="@{viewModel.mIsNonVegVisible == false ? View.GONE : View.VISIBLE}" />
+                android:visibility="@{viewModel.mIsNonVegVisible == false ? View.GONE : View.VISIBLE}"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,11 +41,11 @@
                 android:background="@drawable/text_border"
                 android:padding="4dp"
                 android:text="@{viewModel.mDining}"
-                android:visibility="@{viewModel.mIsDiningVisible == false ? View.GONE : View.VISIBLE}" />
+                android:visibility="@{viewModel.mIsDiningVisible == false ? View.GONE : View.VISIBLE}"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="4dp">
@@ -54,13 +54,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.mMenuTitle}"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.mMenuDescription}"
-                android:textSize="12sp" />
+                android:textSize="12sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,54 +68,53 @@
                 android:layout_marginTop="2dp"
                 android:text="@{viewModel.mRate}"
                 android:textColor="@color/colorPrimary"
-                android:textSize="20sp" />
+                android:textSize="20sp"/>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/button_id"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:gravity="center"
-            android:visibility="visible">
+            android:visibility="@{(safeUnbox(viewModel.mAddVisibility) ? View.VISIBLE : View.GONE)}">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_menu_button"
                 android:onClick="@{() -> viewModel.onAddClicked()}"
-                android:text="Add"
-                android:visibility="@{viewModel.mAddVisibility == true ? View.VISIBLE : View.GONE}" />
+                android:text="Add"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="12dp"
             android:background="@drawable/add_border"
             android:gravity="center"
             android:padding="8dp"
-            android:visibility="@{viewModel.mIsQuantityVisible == true ? View.VISIBLE : View.GONE}">
+            android:visibility="@{(safeUnbox(viewModel.mIsQuantityVisible ? View.VISIBLE : View.GONE))}">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:onClick="@{() -> viewModel.onPlusClicked()}"
-                android:src="@drawable/ic_remove" />
+                android:onClick="@{() -> viewModel.onMinusClicked()}"
+                android:src="@drawable/ic_remove"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.mQuantity}" />
+                android:text="@{String.valueOf(viewModel.mQuantity)}"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:onClick="@{() -> viewModel.onMinusClicked()}"
-                android:src="@drawable/ic_add" />
+                android:onClick="@{() -> viewModel.onPlusClicked()}"
+                android:src="@drawable/ic_add"/>
 
         </LinearLayout>
 

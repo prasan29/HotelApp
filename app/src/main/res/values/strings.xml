@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HotelApp</string>
+    <string name="view_cart">View Cart</string>
 </resources>
